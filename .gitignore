@@ -37,6 +37,13 @@ keypair.json
 # Typescript
 *.tsbuildinfo
 next-env.d.ts
+.scripts-build/
+.tmp-*/
+
+# Local dev server
+.devserver.log
+.devserver.err.log
+.devserver.pid
 
 # Turbo
 .turbo

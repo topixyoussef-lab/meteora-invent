@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": ".scripts-build",
+    "rootDir": ".",
+    "composite": false,
+    "incremental": false,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  },
+  "include": ["scripts/**/*.ts", "src/lib/meteora.ts", "src/lib/utils.ts"]
+}

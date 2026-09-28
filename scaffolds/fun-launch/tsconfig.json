@@ -1,5 +1,5 @@
 {
-  "extends": "@meteora-invent/config/typescript/nextjs",
+  "extends": "@meteora-invent/config-typescript/nextjs",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
