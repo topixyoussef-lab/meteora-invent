@@ -55,7 +55,7 @@ TanStack Query setup.
 
 ```bash
 # 1. From the repo root
-git clone --depth 1 https://github.com/<you>/meteora-invent.git
+git clone --depth 1 https://github.com/topixyoussef-lab/meteora-invent.git
 cd meteora-invent
 
 # 2. Install (Node >= 22.12, pnpm >= 10)
@@ -362,21 +362,30 @@ Target: 60 seconds. Screen record at 1920x1080, cursor enlarged.
 
 ## Reviewer access
 
-The repository is **private**. To grant access:
+This fork is a **public** repository — anyone can clone, read, and run it without an
+invitation. No access needs to be granted.
 
-1. Go to **Settings → Collaborators** on the repository.
+Because the upstream (`MeteoraAg/meteora-invent`) is itself public, a fork of it cannot be
+private: GitHub does not allow private forks of public repositories. If this PoC needs to be
+confidential, it has to live in a **separate private repository** rather than a fork, and the
+`Reviewer access` instructions below would then apply.
+
+To still track specific reviewers, or to add someone as a collaborator:
+
+1. Go to **Settings → Collaborators** on your fork.
 2. Click **Add people** and add the reviewer's GitHub handle.
 3. Send the invitation, and have them accept it.
 
 Or with the GitHub CLI (must be run by an owner/admin who is already authenticated):
 
 ```bash
-gh api -X PUT repos/<owner>/meteora-invent/collaborators/<reviewer-username> \
+gh api -X PUT repos/<you>/meteora-invent/collaborators/<reviewer-username> \
   -f permission=read
 ```
 
-> `gh repo add-collaborator` is a **write** operation and will be rejected for a private
-> repository unless the caller has admin rights. Prefer the Settings UI above.
+> On a public repository this only adds *collaborator* status (push rights, issue
+> notifications). It is **not** an access control — the code stays readable by everyone
+> regardless.
 
 ---
 
